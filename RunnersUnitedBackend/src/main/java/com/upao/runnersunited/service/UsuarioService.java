@@ -10,6 +10,7 @@ public interface UsuarioService {
     Usuario modificarUsuario(Usuario usuario);
     void eliminarUsuario(Integer idUsuario);
     List<Usuario> listarUsuario();
+    List<Usuario> listarUsuariosClientes(Integer idRol);
     Usuario obtenerUsuarioPorIdUsuario(Integer idUsuario);
     Usuario fetchUserByCorreoyContra(String correoUsuario, String contrasenaUsuario);
 

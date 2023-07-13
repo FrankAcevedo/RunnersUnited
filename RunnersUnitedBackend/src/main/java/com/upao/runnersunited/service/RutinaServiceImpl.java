@@ -34,9 +34,7 @@ public class RutinaServiceImpl implements RutinaService {
         Rutina rutina = rutinaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Rutina no encontrada"));
 
-        rutina.setNombre(rutinaActualizada.getNombre());
-        rutina.setDescripcion(rutinaActualizada.getDescripcion());
-        rutina.setNivel(rutinaActualizada.getNivel());
+        rutina.setProgreso(rutinaActualizada.getProgreso());
 
         return rutinaRepository.save(rutina);
     }

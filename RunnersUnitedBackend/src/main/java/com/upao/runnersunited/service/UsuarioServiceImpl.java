@@ -31,12 +31,19 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public void eliminarUsuario(Integer idUsuario) {
-
+        Usuario usuario = usuarioRepository.findById(idUsuario).orElseThrow(() -> new IllegalArgumentException("No se encontró el usuario con el ID proporcionado: " + idUsuario));
+        usuarioRepository.delete(usuario);
     }
+
 
     @Override
     public List<Usuario> listarUsuario() {
         return usuarioRepository.findAll();
+    }
+
+    @Override
+    public List<Usuario> listarUsuariosClientes(Integer idRol) {
+        return usuarioRepository.findByRol_IdRol(idRol);
     }
 
     @Override

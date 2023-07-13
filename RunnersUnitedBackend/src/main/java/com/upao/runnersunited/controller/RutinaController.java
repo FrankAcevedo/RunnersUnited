@@ -41,9 +41,7 @@ public class RutinaController {
         Rutina rutina = rutinaRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Rutina no encontrada"));
 
-        rutina.setNombre(rutinaActualizada.getNombre());
-        rutina.setDescripcion(rutinaActualizada.getDescripcion());
-        rutina.setNivel(rutinaActualizada.getNivel());
+        rutina.setProgreso(rutinaActualizada.getProgreso());
 
         return rutinaRepository.save(rutina);
     }

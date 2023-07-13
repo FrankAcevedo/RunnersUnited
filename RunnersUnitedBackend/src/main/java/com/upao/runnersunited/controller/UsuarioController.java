@@ -7,6 +7,7 @@ import com.upao.runnersunited.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import com.upao.runnersunited.domain.Rol;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -55,6 +56,13 @@ public class UsuarioController {
         List<Usuario> usuarios = usuarioService.listarUsuario();
         return new WrapperResponse<>(true, "success", usuarios).createResponse();
     }
+
+    @GetMapping("/clientes")
+    public ResponseEntity<WrapperResponse<List<Usuario>>> listarUsuariosClientes() {
+        List<Usuario> usuarios = usuarioRepository.findByRol_IdRol(2); // Filtrar por ID de rol igual a 2
+        return new WrapperResponse<>(true, "success", usuarios).createResponse();
+    }
+
 
     @GetMapping("/{idUsuario}")
     public ResponseEntity<WrapperResponse<Usuario>> obtenerUsuarioPorIdUsuario(@PathVariable("idUsuario") Integer idUsuario) {

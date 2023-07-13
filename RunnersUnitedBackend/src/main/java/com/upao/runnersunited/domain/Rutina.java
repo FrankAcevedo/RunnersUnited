@@ -23,6 +23,7 @@ public class Rutina {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private int cantidadDias;
+    private int progreso;
 
     public Rutina() {
         this.fechaInicio = LocalDate.now();
@@ -88,6 +89,14 @@ public class Rutina {
 
     public int getCantidadDias() {
         return cantidadDias;
+    }
+
+    public int getProgreso() {
+        return progreso;
+    }
+
+    public void setProgreso(int progreso) {
+        this.progreso = progreso;
     }
 
     private void calcularCantidadDias() {
