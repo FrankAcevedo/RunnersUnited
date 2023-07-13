@@ -1,0 +1,3 @@
+[submodule "RunnersUnitedFrontend"]
+	path = RunnersUnitedFrontend
+	url = https://github.com/RunnersUnited/RunnersUnitedFrontend
